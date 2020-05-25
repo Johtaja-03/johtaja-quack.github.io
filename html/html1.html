@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Johtajan Mahtava sivu</title>
+<link rel="stylesheet" type="text/css" href="dropdown.css">
+<style>
+body {
+	background: #F2D7D5;
+	}
+  
+</style>
+</head>
+<body>
+<div class="header">
+	<h1> Johtajan lempi elokuvat</h1>
+</div>
+
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Valikko</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="html1.html">etusivu</a>
+    <a href="html2.html">suosikkielokuva 1</a>
+    <a href="html3.html">suosikkielokuva 2</a>
+	<a href="html4.html">suosikkielokuva 3</a>
+  </div>
+</div>
+<h1> tällä sivulla pääset näkemään johtajan lempi leffat</h1>
+<br/><br/><br/>
+<h2>nauti tästä tiedosta</h2>
+<script>
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+<div class="footer">
+	<h3>Johtaja oy</h3>
+</div>
+</body>
+</html>

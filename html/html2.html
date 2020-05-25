@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Johtajan Mahtava sivu</title>
+<link rel="stylesheet" type="text/css" href="dropdown.css">
+<style>
+body {
+	background: #D5F5E3;
+	}
+</style>
+</head>
+<body>
+<div class="header">
+	<h1> Johtajan lempi elokuvat</h1>
+</div>
+
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Valikko</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="html1.html">etusivu</a>
+    <a href="html2.html">suosikkielokuva 1</a>
+    <a href="html3.html">suosikkielokuva 2</a>
+	<a href="html4.html">suosikkielokuva 3</a>
+  </div>
+</div>
+
+<h2>Kung Fu Panda</h2>
+
+<ul>
+	<li> Kesto: 1h 35min</li>
+	<li> Ikäraja: 7</li>
+	<li> Genre: Action</li>
+</ul>
+<p>tarina kertoo po nimisestä pandasta josta tehdään lohikäärme soturi, hänen täytyy treenata jotta pystyisi päihittää pahan tai lung:in</p>
+<br/><br/><br/>
+
+
+
+<!--calls the function when it is clicked -->
+<button type="button" onclick="switchImg()">Click Me!</button>
+<!--image with id of "imgToSwitch." This is the content that is targeted -->
+<img src="kungfupanda.jpg" id="imgToSwitch">
+
+<script>
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+var x = 1; //initializes counter
+function switchImg() {
+  if (x == 1) { //if the counter is at 1
+    document.getElementById("imgToSwitch").src = "kungfu.jpg";
+    x++; //increments the counter to 2
+  } else if (x == 2) { //if this is the 2nd click
+    document.getElementById("imgToSwitch").src = "kungfupanda.jpg";
+	x = 1; //resets counter to 1
+  }
+}
+</script>
+<div class="footer">
+	<h3>Johtaja oy</h3>
+</div>
+</body>
+</html>
